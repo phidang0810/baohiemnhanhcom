@@ -1,6 +1,5 @@
 <?php
 session_start();
-error_reporting(E_ERROR | E_PARSE);
 	@define ( '_template' , './templates/');
 	@define ( '_source' , './sources/');
 	@define ( '_lib' , './administrator/lib/');
@@ -18,8 +17,6 @@ error_reporting(E_ERROR | E_PARSE);
 	
 ?>
 
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <base href="https://<?=$config_url?>/"  />
@@ -31,7 +28,7 @@ error_reporting(E_ERROR | E_PARSE);
 <meta name="bao hiem" content="https://plus.google.com/u/0/+saigonpjicobaohiem" />
 <meta property="fb:app_id" content="907431042624517"/>
 <meta property="fb:admins" content="100009015342210"/>
-<link href="http://thegioibaohiem.net/favicon.ico" rel="shortcut icon" />
+<link href="https://baohiemnhanh.com/favicon.ico" rel="shortcut icon" />
 
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <link href="css/highslide.css" rel="stylesheet" type="text/css" />
@@ -47,7 +44,7 @@ error_reporting(E_ERROR | E_PARSE);
 <script language="javascript" type="text/javascript">
 $(document).ready(function(){
 
- <?php if($_REQUEST['lang']){?>
+ <?php if($_REQUEST['lang']){ ?>
 	$("#vi").click(function(){
 		ad=window.location.href;		
 		kq=ad.replace('/en/','/vi/')
@@ -59,7 +56,8 @@ $(document).ready(function(){
 		kq=ad.replace('/vi/','/en/')
 		document.location=kq;
 		return false;
-		});<? }?>
+		});
+<?php } ?>
 
 	$(window).scroll(function(){
         if ($(this).scrollTop() > 100) {
@@ -147,7 +145,7 @@ function ClickToURL(linkVal)
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
   
-    <?php include _template."layout/header.php"?>
+    <?php include _template."layout/header.php"; ?>
     <div id="container">
     <!--<div style="float:left;width:200px;"><script src="js/date.js"></script></div>-->
     <div style="margin-bottom:5px;padding:0 10px"><marquee onmouseover="this.stop()" onmouseout="this.start()" scrollamount="2" scrolldelay="2" width="100%"><?=_chao?></marquee></div>
@@ -163,16 +161,16 @@ function ClickToURL(linkVal)
 		echo "<div id='main'>";
 		include _template.$template."_tpl.php";
 		echo "</div>";
-	}?>
+	} ?>
 		
         <div class="clear"></div>
-        <?php include _template."layout/spkhuyenmai.php";?>
+        <?php include _template."layout/spkhuyenmai.php"; ?>
     </div><!--end container-->    
       
 </div><!--end wrapper-->
 </div>
 </div>
-<?php include _template."layout/footer.php"?>
+<?php include _template."layout/footer.php"; ?>
 <a href="#" class="scrollToTop"></a>
 
 </body>
